@@ -1,6 +1,15 @@
+//CSS
 import styles from './App.module.css';
+//Components
 import Footer from './components/Footer';
 import Header from './components/Header';
+
+//React Router DOM
+import { BrowserRouter } from 'react-router-dom';
+
+//Routes
+import RoutesConfiguration from './routes/RoutesConfiguration';
+
 
 function App() {
 
@@ -8,9 +17,9 @@ function App() {
     <section className={styles.mainSection}>
       <div className={styles.pageContent}>
         <Header />
-        <main>
-          Conteúdo principal da apágina
-        </main>
+        <BrowserRouter>
+          <RoutesConfiguration />
+        </BrowserRouter>
         <Footer />
       </div>
     </section>

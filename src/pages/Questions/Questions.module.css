@@ -1,0 +1,150 @@
+.mainContainer {
+    color: #000;
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.questionsContent {
+
+    height: 100%;
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.questionsContent p {
+    width: 50%;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.questionsContent h3 {
+    width: 70%;
+    height: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 32px;
+}
+
+.optionsContainer {
+
+    width: 70%;
+    height: 5em;
+    flex: 1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+  
+  .optionsContainer span {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    padding: 1em;
+  }
+
+.optionsContainer span a {
+    padding: 1em;
+    border: 2px solid #000;
+    margin: 10px;
+    height: 50%;
+    width: 350px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    transition: all .3s ease-in-out;
+    font-weight: bold;
+}
+
+.optionsContainer span a:hover {
+    color: #fff;
+    background: #000;
+}
+
+.nextButton {
+    height: 33%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.nextButton span {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    flex-direction: column;
+    color: #323232;
+    background: #ffa806;
+    z-index: 1;
+    transition: all .3s ease-in-out;
+    -webkit-box-shadow: 0px 0px 14px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 14px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 14px -1px rgba(0,0,0,0.75);
+}
+
+.nextButton span:hover {
+    background: #ffc04b;
+}
+
+.nextButton span:hover {
+    background: #ffc04b;
+}
+
+.nextButton::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  animation: ripple 2s infinite ease-out;
+}
+  /* Animação do pingo de água */
+  @keyframes ripple {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 0.7;
+    }
+    50% {
+      width: 100px;
+      height: 100px;
+      opacity: 0.4;
+    }
+    100% {
+      width: 200px;
+      height: 200px;
+      opacity: 0;
+    }
+  }
+
+  .disabled {
+    opacity: .5;
+    cursor: not-allowed;
+    animation: none;
+  }

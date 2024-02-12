@@ -1,7 +1,7 @@
 .mainSection {
     height: 100vh;
     width: 100%;
-    background: url('./assets/natureBackground.gif');
+    background: url('./assets/whiteBackground.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -11,7 +11,7 @@
     height: 100%;
     width: 100%;
     backdrop-filter: blur(5px);
-    background: #27272738;
+    background: #b4b4b411;
     display: flex;
     flex-direction: column;
 }
