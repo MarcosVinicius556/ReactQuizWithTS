@@ -1,0 +1,31 @@
+.headerContainer {
+    height: 90px;
+    width: 100%;
+    display: flex;
+    color: #fff;
+    padding: 1em;
+}
+
+.headerItemGroup {
+    min-width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerItemGroup:nth-child(2) {
+    flex: 1;
+    font-size: 32px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.headerMenu {
+    cursor: pointer;
+}
+
+.headerShareMenu {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
