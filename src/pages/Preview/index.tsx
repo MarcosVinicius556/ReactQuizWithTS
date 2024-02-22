@@ -27,10 +27,9 @@ const Preview = () => {
   return (
     <Fade up>
         <section className={styles.previewSection}>
-            <h1>Olá seja bem vindo ao meu quiz sobre {subject}</h1>
+            <h1>Preparado de testar seus conhecimentos em {subject}?</h1>
             <p>
-                Preparei algumas questões para você testar seu conhecimento neste superset tão amado de JavaScript.
-                Após finalizar, fique a vontade para explorar o código fonte da aplicação, pode acessa-lo clicando <a href="#">aqui</a>!
+                Quando estiver pronto basta clicar no botão abaixo e iniciar o teste, Boa Sorte!
             </p>
             <a onClick={() => handleCallQuestions()}>
                 <span>
