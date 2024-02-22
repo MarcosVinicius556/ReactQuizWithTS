@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { IQuizTypes } from "./actionTypes";
 import { QuizActions, IQuizState } from "./types";
 import { IQuestion } from "../../interfaces/Question";
@@ -10,7 +11,7 @@ const INITIAL_APP_STATE: IQuizState = {
     currentQuestion: 0,
     score: 0,
     isAnswered: false,
-    subject: null,
+    subject: 'Quiz Sobre TypeScript',
     loading: false,
     error: null
 }
@@ -20,27 +21,9 @@ const quizReducer = (state: IQuizState = INITIAL_APP_STATE, action: QuizActions)
         case IQuizTypes.START_GAME:{
                 console.log('Iniciou o jogo');
                 
-                /**
-                 * Reordena as questões
-                 */
-                let reorderedQuestions = state.questions;
-                if(state.questions) {
-                    reorderedQuestions = state.questions.sort(() => {
-                        return Math.random() - 0.5
-                    });
-
-                    /**
-                     * Reordena as opções de cada questão
-                    */
-                    reorderedQuestions.map((question: IQuestion) =>{ 
-                        question.options = question.options.sort(() => {
-                            return Math.random() - 0.5
-                        });
-                    });
-                }
                 return { 
                     ...state,
-                    questions: reorderedQuestions
+                    gameStage: GameStage.PLAYING
                 }
             }
         case IQuizTypes.NEXT_QUESTION: {
@@ -92,9 +75,27 @@ const quizReducer = (state: IQuizState = INITIAL_APP_STATE, action: QuizActions)
             }
         case IQuizTypes.LOAD_QUESTIONS_SUCCESS:{
                 console.log('Encontrado questões...');
+                /**
+                 * Reordena as questões
+                 */
+                let reorderedQuestions: IQuestion[] = [];
+
+                if (action.payload.questions) {
+                    reorderedQuestions = [...action.payload.questions];
+                    reorderedQuestions = reorderedQuestions.sort(() => Math.random() - 0.5);
+
+                    /**
+                     * Reordena as opções de cada questão
+                     */
+                    reorderedQuestions = reorderedQuestions.map((question: IQuestion) => {
+                        const updatedQuestion = { ...question };
+                        updatedQuestion.options = [...updatedQuestion.options].sort(() => Math.random() - 0.5);
+                        return updatedQuestion;
+                    });
+                }
                 return { 
                     ...state,
-                    questions: action.payload.questions,
+                    questions: reorderedQuestions,
                     loading: false
                 }
             }
