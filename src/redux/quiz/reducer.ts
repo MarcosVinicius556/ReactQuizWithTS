@@ -36,14 +36,18 @@ const quizReducer = (state: IQuizState = INITIAL_APP_STATE, action: QuizActions)
                 let nextQuestion = state.currentQuestion;
                 let endgame = false;
 
-                nextQuestion += 1;
+                nextQuestion = state.currentQuestion + 1;
+                console.log('Próxima questão --> ' + nextQuestion);
                 if(!state.questions[nextQuestion]){
                     endgame = true;
+                    console.log('Fim de jogo!');
                 } 
+
+                console.log(nextQuestion);
 
                 return {
                     ...state,
-                    currentQuestion: nextQuestion - 1, //subtrai um para manter correto com o array....
+                    currentQuestion: nextQuestion,
                     gameStage: endgame ? GameStage.END : GameStage.PLAYING,
                     isAnswered: false,
                 }

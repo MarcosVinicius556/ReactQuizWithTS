@@ -48,6 +48,8 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    max-height: 350px;
+    min-height: 300px;
 }
   
   .optionsContainer span {
@@ -59,7 +61,7 @@
     padding: 1em;
   }
 
-.optionsContainer span a {
+.optionsContainer span button {
     padding: 1em;
     border: 2px solid #000;
     margin: 10px;
@@ -73,9 +75,12 @@
     color: #000;
     transition: all .3s ease-in-out;
     font-weight: bold;
+    max-height: 50px;
+    min-height: 40px;
+    cursor: pointer;
 }
 
-.optionsContainer span a:hover {
+.optionsContainer span button:hover {
     color: #fff;
     background: #000;
 }
@@ -88,6 +93,7 @@
     align-items: center;
     text-decoration: none;
     font-size: 24px;
+    cursor: pointer;
 }
 
 .nextButton span {
@@ -147,4 +153,22 @@
     opacity: .5;
     cursor: not-allowed;
     animation: none;
+  }
+
+  .correct {
+    background: #a6ff9e;
+    pointer-events: all;
+  }
+  
+  .wrong {
+    cursor: not-allowed;
+    background: #f87a64;
+  }
+
+  .correct:hover {
+    cursor: not-allowed;
+  }
+
+  .wrong:hover {
+    cursor: not-allowed;
   }
