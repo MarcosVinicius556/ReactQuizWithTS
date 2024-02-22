@@ -57,6 +57,7 @@
 }
 
 .homeContent a:nth-child(3) span {
+    cursor: pointer;
     width: 70px;
     height: 70px;
     display: flex;

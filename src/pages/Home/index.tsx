@@ -1,9 +1,28 @@
-import { Link } from 'react-router-dom';
 import styles from './Home.module.css';
 import { FaChevronDown } from 'react-icons/fa';
 import Fade from 'react-reveal/Fade';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import {
+  loadQuestionsRequest,
+  startGame
+} from '../../redux/quiz/actions';
 
 const Home = () => {
+
+  const dispatch = useDispatch();
+
+  /**
+   * Ao iniciar a aplicação já busca todas as questões
+   */
+  useEffect(() => {
+    dispatch(loadQuestionsRequest());
+  }, []);
+
+  const handleStartGame = () => {
+    dispatch(startGame())
+  }
+
   return (
     <Fade up>
       <main className={styles.mainContainer}>
@@ -14,11 +33,11 @@ const Home = () => {
               <p>
                   Este quiz foi desenvolvido em React com TypeScript, o foco dele é ser um projeto para estudos de tecnologias como TypeScript, CSS Modules, Redux, Redux-Saga, sinta-se a vontade para testar a aplicação e explorar seu fonte <a href="">aqui</a>! 
               </p>
-              <Link to='/questions' >
+              <a onClick={() => handleStartGame()}>
                 <span >
                   <FaChevronDown />
                 </span>
-              </Link>
+              </a>
           </div>
       </main>
     </Fade>

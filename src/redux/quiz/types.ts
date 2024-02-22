@@ -4,7 +4,7 @@ import { IQuizTypes } from "./actionTypes";
 
 export interface IQuizState {
     gameStage: GameStage | null,
-    questions: IQuestion[] | null,
+    questions: IQuestion[],
     currentQuestion: number,
     score: number,
     isAnswered: boolean,
@@ -18,6 +18,11 @@ export interface StartGamePayload { }
 export interface NextQuestionPayload { }
 
 export interface EndGamePayload { }
+
+export interface VerifyAnswerPayload {
+    question: IQuestion;
+    answer: string;
+ }
 
 export interface LoadQuestionPayload { }
 
@@ -44,6 +49,11 @@ export interface EndGame {
     payload: EndGamePayload;
 }
 
+export interface VerifyAnswer {
+    type: typeof IQuizTypes.VERIFY_ANSWER;
+    payload: VerifyAnswerPayload;
+}
+
 export interface LoadQuestionsRequest {
     type: typeof IQuizTypes.LOAD_QUESTIONS_REQUEST;
     payload: LoadQuestionPayload;
@@ -63,6 +73,7 @@ export type QuizActions =
                 | StartGame
                 | NextQuestion
                 | EndGame
+                | VerifyAnswer
                 | LoadQuestionsRequest 
                 | LoadQuestionsSuccess 
                 | LoadQuestionsFailure;

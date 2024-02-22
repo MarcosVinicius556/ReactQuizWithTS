@@ -6,6 +6,7 @@ import Fade from 'react-reveal/Fade';
 import { FaChevronDown } from 'react-icons/fa';
 
 const Questions = () => {
+
   return (
     <Fade up>
       <main className={styles.mainContainer}>
