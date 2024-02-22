@@ -11,7 +11,7 @@ const INITIAL_APP_STATE: IQuizState = {
     currentQuestion: 0,
     score: 0,
     isAnswered: false,
-    subject: 'Quiz Sobre TypeScript',
+    subject: 'TypeScript',
     loading: false,
     error: null
 }
@@ -23,24 +23,29 @@ const quizReducer = (state: IQuizState = INITIAL_APP_STATE, action: QuizActions)
                 
                 return { 
                     ...state,
-                    gameStage: GameStage.PLAYING
+                    gameStage: GameStage.START,
+                    currentQuestion: 0,
+                    score: 0,
+                    isAnswered: false,
+                    loading: false,
+                    error: null
                 }
             }
         case IQuizTypes.NEXT_QUESTION: {
                 console.log('Avançou 1 questão');
-                const nextQuestion = state.currentQuestion++;
+                let nextQuestion = state.currentQuestion;
                 let endgame = false;
 
+                nextQuestion += 1;
                 if(!state.questions[nextQuestion]){
                     endgame = true;
                 } 
 
                 return {
                     ...state,
-                    currentQuestion: nextQuestion,
+                    currentQuestion: nextQuestion - 1, //subtrai um para manter correto com o array....
                     gameStage: endgame ? GameStage.END : GameStage.PLAYING,
-                    isAnswered: false
-                    
+                    isAnswered: false,
                 }
             }
         case IQuizTypes.VERIFY_ANSWER:{

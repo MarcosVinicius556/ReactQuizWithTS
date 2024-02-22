@@ -7,10 +7,12 @@ import {
   loadQuestionsRequest,
   startGame
 } from '../../redux/quiz/actions';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   /**
    * Ao iniciar a aplicação já busca todas as questões
@@ -21,6 +23,7 @@ const Home = () => {
 
   const handleStartGame = () => {
     dispatch(startGame())
+    navigate('/preview');
   }
 
   return (

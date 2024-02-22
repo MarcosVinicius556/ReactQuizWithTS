@@ -13,9 +13,7 @@ import applicationStore from './redux/store.ts'
 import App from './App.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
     <Provider store={applicationStore}>
       <App />
     </Provider>
-  </React.StrictMode>,
 )
