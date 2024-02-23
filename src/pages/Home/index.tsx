@@ -34,7 +34,7 @@ const Home = () => {
                   Olá, seja bem vindo o TS Quiz, um quiz para testar seus conhecimentos em <span> &lt;TypeScript/&gt; </span>
               </h1>
               <p>
-                  Este quiz foi desenvolvido em React com TypeScript, o foco dele é ser um projeto para estudos de tecnologias como TypeScript, CSS Modules, Redux, Redux-Saga, sinta-se a vontade para testar a aplicação e explorar seu fonte <a href="">aqui</a>! 
+                  Este quiz foi desenvolvido em React com TypeScript, o foco dele é ser um projeto para estudos de tecnologias como TypeScript, CSS Modules, Redux, Redux-Saga, sinta-se a vontade para testar a aplicação e explorar seu fonte <a href="https://github.com/MarcosVinicius556/ReactQuizWithTS" target='_blank'>aqui</a>! 
               </p>
               <a onClick={() => handleStartGame()}>
                 <span >

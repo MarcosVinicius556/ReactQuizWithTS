@@ -44,7 +44,7 @@ const data: IQuestion[] = [
       {
         question: "O que é um módulo em TypeScript?",
         options: ["Um bloco de código JavaScript", "Uma função", "Um tipo de dados", "Um arquivo que pode conter valores, funções, classes"],
-        answer: "Um arquivo que pode conter um ou mais valores, funções ou classes"
+        answer: "Um arquivo que pode conter valores, funções, classes"
       },
       {
         question: "Qual é o método preferido para instalar o TypeScript?",
