@@ -52,7 +52,7 @@ const quizReducer = (state: IQuizState = INITIAL_APP_STATE, action: QuizActions)
                     isAnswered: false,
                 }
             }
-        case IQuizTypes.VERIFY_ANSWER:{
+        case IQuizTypes.VERIFY_ANSWER: {
                 console.log('Verificando a resposta');
 
                 if(state.isAnswered) return;

@@ -43,7 +43,7 @@
 
 .homeContent a:nth-child(1) {
     text-decoration: none;
-    color: #8220c4;
+    color: #fc1a1a;
 }
 
 .homeContent a:nth-child(3) {
@@ -106,3 +106,30 @@
     }
   }
 
+  @media screen and (max-width: 600px) {
+    .homeContent {
+      padding: 0;
+    }
+    .homeContent h1 {
+      font-size: 24px;
+    }    
+
+    .homeContent p {
+      width: 100%;      
+      font-size: 20px;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .homeContent {
+      padding: 0;
+    }
+    .homeContent h1 {
+      font-size: 18px;
+    }    
+
+    .homeContent p {
+      width: 100%;      
+      font-size: 16px;
+    }
+  }

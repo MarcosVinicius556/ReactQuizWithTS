@@ -1,0 +1,132 @@
+.endGameSection {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.endGameSection div {
+    width: 50%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 1
+}
+
+.result {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.result h1 {
+    margin-bottom: 1em;
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.result svg {
+
+}
+
+.endGameSection div a {
+    height: 33%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.endGameSection div a span {
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    flex-direction: column;
+    color: #323232;
+    background: #ffa806;
+    z-index: 1;
+    transition: all .3s ease-in-out;
+    -webkit-box-shadow: 0px 0px 14px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 14px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 14px -1px rgba(0,0,0,0.75);
+}
+
+.endGameSection div a span:hover {
+    background: #ffc04b;
+}
+
+.endGameSection div a::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(179, 178, 178, 0.7);
+  border-radius: 50%;
+  animation: ripple 2s infinite ease-out;
+}
+  /* Animação do pingo de água */
+  @keyframes ripple {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 0.7;
+    }
+    50% {
+      width: 100px;
+      height: 100px;
+      opacity: 0.4;
+    }
+    100% {
+      width: 200px;
+      height: 200px;
+      opacity: 0;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+   
+    .endGameSection div {
+      width: 100%;
+    }
+
+    .result h1 {
+      font-size: 22px;
+      width: 100%;
+    } 
+
+    .result svg {
+      width: 250px;
+    }
+    
+  }
+  
+  @media screen and (max-width: 400px) {
+  
+    .endGameSection div {
+      width: 100%;
+    }
+
+    .result h1 {
+      font-size: 22px;
+      width: 100%;
+    } 
+
+    .result svg {
+      width: 150px;
+    }
+    
+  }

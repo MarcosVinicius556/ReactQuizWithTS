@@ -29,3 +29,21 @@
     cursor: pointer;
     align-items: center;
 }
+
+@media screen and (max-width: 600px) {
+    .headerItemGroup:nth-child(2) {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .headerContainer {
+        padding: 0;
+    }
+
+    .headerItemGroup:nth-child(2) {
+        font-size: 12px;
+        min-width: 80px;
+    }
+}

@@ -8,3 +8,11 @@
     font-weight: bold;
     color: #000;
 }
+
+@media screen and (max-width: 600px) {
+    .footerContainer {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 400px) { }
